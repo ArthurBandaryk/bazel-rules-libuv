@@ -1,0 +1,19 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"]
+)
+
+cmake(
+    name = "libuv",
+    visibility = ["//visibility:public"],
+    cache_entries = {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_SHARED_LIBS": "OFF",
+        "BUILD_TESTING": "OFF",
+    },
+    lib_source = ":all",
+    out_static_libs = ["libuv.a"],
+)
