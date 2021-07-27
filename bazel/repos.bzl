@@ -16,8 +16,10 @@ def repos(external = True, repo_mapping = {}):
     if external and "com_github_3rdparty_bazel_rules_libuv" not in native.existing_rules():
         git_repository(
             name = "com_github_3rdparty_bazel_rules_libuv",
-            remote = "https://github.com/3rdparty/bazel-rules-libuv",
-            commit = "ab0723132f0020f8e642bd4952e1d6ada09198d8",
+            #remote = "https://github.com/3rdparty/bazel-rules-libuv",
+            remote = "https://github.com/ArthurBandaryk/bazel-rules-libuv",
+            commit = "6411a9dbc82ccabb96ec9871df4a5dace306c5b2",
+            #commit = "ab0723132f0020f8e642bd4952e1d6ada09198d8",
             # shallow_since = "1620093785 -0700",
             repo_mapping = repo_mapping,
         )
